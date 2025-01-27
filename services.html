@@ -1,219 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets/logo.svg" type="image/icon type" />
 
-    <title>Services - ITFIX</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/logo.svg" type="image/icon type" />
 
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: white;
-        color: #e0e0e0;
-        font-family: "Poppins", sans-serif;
-      }
-      .navbar {
-        position: fixed;
-        display: flex;
-        top: 0;
-        width: 100%;
-        height: 40px;
-        background-color:white;
-        padding: 10px 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-        justify-content: center;
-        align-items: center;
-        animation: slideDown 1s ease-in-out;
-
-      }
-
-      .nav {
-        display: flex;
-        justify-content: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .nav li {
-        margin: 0 15px;
-      }
-
-      .nav-link {
-        color: #838282;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
-
-      .nav-link:hover {
-        color: black;
-      }
-      .card {
-        position: relative;
-        width: 300px;
-        height: 200px;
-        background-color: #80B6C2;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-        cursor: pointer;
-        /* border: 1px solid #333; */
-        /* z-index: ; */
-        animation: fadeIn 1.5s ease-in-out;
-        
-      }
-
-      .card:hover {
-        transform: rotate(0deg) scale(1.1);
-        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-        background: black;
-      }
-
-      .card__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-45deg);
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-        background-color: black;
-        font-family: "Poppins", serif;
-        color: #e0e0e0;
-        opacity: 0;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-        overflow-x:scroll;
-        -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
-      }
-      .card__contentexample::-webkit-scrollbar {
-    display: none;
+  <title>Services - ITFIX</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+    * {
+  font-family: "Poppins", serif;
+  -webkit-tap-highlight-color: transparent;
 }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: #e0e0e0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .navbar {
+      position: fixed;
+      display: flex;
+      top: 0;
+      width: 100%;
+      height: 40px;
+      background-color: white;
+      padding: 10px 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      animation: slideDown 1s ease-in-out;
+
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav li {
+      margin: 0 15px;
+    }
+
+    .nav-link {
+      color: #838282;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: black;
+    }
+
+    .card {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: #80B6C2;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      cursor: pointer;
+      /* border: 1px solid #333; */
+      /* z-index: ; */
+      animation: fadeIn 1.5s ease-in-out;
+
+    }
+
+    .card:hover {
+      transform: rotate(0deg) scale(1.1);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.9);
+
+    }
+
+    .card__content {
+      
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-family: "Poppins", serif;
+      color: #333;
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      overflow-x: scroll;
+      border: .2px solid black;
+      border-radius: 10px;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+    }
+
+    .card__contentexample::-webkit-scrollbar {
+      display: none;
+    }
 
 
-      .card:hover .card__content {
-        transform: translate(-50%, -50%) rotate(0deg);
-        opacity: 1;
-      }
+    .card:hover .card__content {
+      transform: translate(-50%, -50%) rotate(0deg);
+      opacity: 1;
+    }
 
-      .card__title {
-        margin: 0;
-        font-size: 24px;
-        color: white;
-        font-weight: 700;
-      }
+    .card__title {
+      margin: 0;
+      font-size: 24px;
+      /* color: white; */
+      font-weight: 700;
+    }
 
-      .card__description {
-        margin: 10px 0 0;
-        font-size: 14px;
-        color: #b0b0b0;
-        line-height: 1.4;
-      }
+    .card__description {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #b0b0b0;
+      line-height: 1.4;
+    }
 
-      .card:hover h1 {
-        scale: 0;
-        transform: rotate(-45deg);
-      }
+    .card:hover h1 {
+      scale: 0;
+      transform: rotate(-45deg);
+    }
 
-      h1 {
-        color: white;
-        font-family: "Poppins", serif;
-      }
+    h1 {
+      color: white;
+      font-family: "Poppins", serif;
+    }
 
+    .cards {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    @media (max-width: 500px) {
       .cards {
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
         gap: 40px;
       }
+    }
 
-      @media (max-width: 500px) {
-        .cards {
-          flex-direction: column;
-          gap: 40px;
-        }
-      }
-            @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
       }
 
-      @keyframes slideDown {
-        from {
-          transform: translateY(-100%);
-        }
-        to {
-          transform: translateY(0);
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-     
+    }
 
-    </style>
-  </head>
-  <body>
-    <div class="navbar">
-        <ul class="nav">
-          <li><a href="index.html" class="nav-link">HOME</a></li>
-          <li><a href="notice.html" class="nav-link">NOTICES</a></li>
-          <li><a href="about.html" class="nav-link">ABOUT</a></li>
-          <li><a href="" class="nav-link">SERVICES</a></li>
-        </ul>
-      </div>
-    <div class="cards">
-      <div class="card">
-        <h1>BSc. CSIT</h1>
-        <div class="card__content">
-          <p class="card__title">Bachelor of Science in CSIT</p>
-          <p class="card__description">
-            A comprehensive program that combines computer science and information technology to shape future tech innovators.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <h1>BSCS</h1>
-        <div class="card__content">
-          <p class="card__title">Bachelor of Computer Science</p>
-          <p class="card__description">
-            Focused on core computer science principles, preparing students for advanced software development and research.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <h1>BCA</h1>
-        <div class="card__content">
-          <p class="card__title">Bachelor of Computer Applications</p>
-          <p class="card__description">
-            A professional course emphasizing application development and practical tech skills for the modern industry.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <h1>BIT</h1>
-        <div class="card__content">
-          <p class="card__title">Bachelor of Information Technology</p>
-          <p class="card__description">
-            Designed to empower students with the technical and managerial expertise to thrive in the IT sector.
-          </p>
-        </div>
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .learn-more {
+      display: inline-block;
+      padding: 7px 12px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .learn-more:hover {
+      background-color: #0056b3;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px;
+      color: #333;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .close {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 7px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul class="nav">
+      <li><a href="index.html" class="nav-link">HOME</a></li>
+      <li><a href="notice.html" class="nav-link">NOTICES</a></li>
+      <li><a href="about.html" class="nav-link">ABOUT</a></li>
+      <li><a href="" class="nav-link">SERVICES</a></li>
+    </ul>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <h1>BSc. CSIT</h1>
+      <div class="card__content">
+        <p class="card__title">Bachelor of Science in CSIT</p>
+        <p class="card__description">
+          A comprehensive program that combines computer science and information technology to shape future tech
+          innovators.
+        </p>
+        <a class="learn-more" href="#" data-course="BSc. CSIT">Learn More</a>
+
       </div>
     </div>
-  </body>
+    <div class="card">
+      <h1>BSCS</h1>
+      <div class="card__content">
+        <p class="card__title">Bachelor of Computer Science</p>
+        <p class="card__description">
+          Focused on core computer science principles, preparing students for advanced software development and
+          research.
+        </p>
+        <a class="learn-more" href="#" data-course="BSCS">Learn More</a>
+
+      </div>
+    </div>
+    <div class="card">
+      <h1>BCA</h1>
+      <div class="card__content">
+        <p class="card__title">Bachelor of Computer Applications</p>
+        <p class="card__description">
+          A professional course emphasizing application development and practical tech skills for the modern industry.
+        </p>
+        <a class="learn-more" href="#" data-course="BCA">Learn More</a>
+
+      </div>
+    </div>
+    <div class="card">
+      <h1>BIT</h1>
+      <div class="card__content">
+        <p class="card__title">Bachelor of Information Technology</p>
+        <p class="card__description">
+          Designed to empower students with the technical and managerial expertise to thrive in the IT sector.
+        </p>
+        <a class="learn-more" href="#" data-course="BIT">Learn More</a>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="courseModal">
+    <div class="modal-content">
+      <h2 id="modalTitle">Course Title</h2>
+      <p id="modalDescription">Course description and credit hours go here.</p>
+      <button class="close" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</body>
+<script>
+  const modal = document.getElementById("courseModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+
+  const courseDetails = {
+    "BSc. CSIT": "Comprehensive program with 120 credit hours, focusing on computer science and IT.",
+    "BSCS": "120 credit hours focused on software development and core computer science concepts.",
+    "BCA": "108 credit hours with emphasis on application development and practical skills.",
+    "BIT": "120 credit hours covering technical expertise and IT management skills."
+  };
+
+  document.querySelectorAll(".learn-more").forEach(button => {
+    button.addEventListener("click", e => {
+      e.preventDefault();
+      const course = button.getAttribute("data-course");
+      modalTitle.textContent = course;
+      modalDescription.textContent = courseDetails[course];
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+</script>
 </html>
