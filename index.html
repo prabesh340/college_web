@@ -131,6 +131,10 @@
         </div>
       </div>
     </div>
+    <div class="mobile" id="comingSoon" >
+      <h1>COMING SOON...</h1>
+    </div>
+    
   </body>
   <script>
     // Initially hide the logo
@@ -144,6 +148,19 @@
                 $("#logo").show();
         });
     });
+    document.addEventListener("DOMContentLoaded", () => {
+  // Check screen size and display the "COMING SOON" text
+  const comingSoonElement = document.getElementById("comingSoon");
+
+  if (window.innerWidth < 600) {
+    $(".container").hide();
+    $("#comingSoon").show();
+  }
+  else{
+    comingSoonElement.style.display='none';
+  }
+});
+
 </script>
 
 </html>

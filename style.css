@@ -203,3 +203,21 @@ h1 {
     transform: translateY(0);
   }
 }
+
+
+@media (max-width: 600px) {
+
+
+  #comingSoon {
+    display: flex;
+    height:85vh;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  #comingSoon h1 {
+    color: black;
+    font-size: 2rem; /* Adjust size for mobile */
+  }
+}
