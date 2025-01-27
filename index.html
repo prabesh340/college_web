@@ -6,13 +6,27 @@
     <title>ITFIX</title>
     <link rel="icon" href="assets/logo.svg" type="image/icon type" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loader.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   </head>
   <body>
+      <!-- From Uiverse.io by Nawsome --> 
+       <div class="spinner">
+        <figure class="loader">
+  <div class="dot white"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</figure>
+       </div>
+
     <div class="container">
       <div class="main">
         <div class="navbar">
           <div class="logo">
-            <a href=""><img src="assets/logo.png" alt="" /></a>
+            <a href=""><img src="assets/logo.png" alt="" id="logo"/></a>
           </div>
           <ul class="nav">
             <li><a href="#" class="nav-link">HOME</a></li>
@@ -118,4 +132,18 @@
       </div>
     </div>
   </body>
+  <script>
+    // Initially hide the logo
+    const element = document.getElementById('logo');
+    element.style.display = 'none';
+
+    // On window load, handle the spinner and logo
+    $(window).on("load", function() {
+        $(".spinner").fadeOut("slow", function() {
+            // Add a delay before showing the logo
+                $("#logo").show();
+        });
+    });
+</script>
+
 </html>
