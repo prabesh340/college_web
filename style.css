@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", serif;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: repeat(7, 1fr) 10vh 10vh;
+  grid-template-columns: repeat(15, 1fr);
+}
+.main {
+  background-image: url(assets/background.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-row: span 7;
+  grid-column: span 10;
+
+  
+}
+.aside {
+  background-color: #f1f6fe;
+  grid-row: span 9;
+  grid-column: span 5;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 1px #cac8c8 solid;
+
+}
+.fottor {
+  background-color: #ff9257;
+  grid-row: span 2;
+  grid-column: span 10;
+  display: flex;
+  justify-content: space-around;
+
+}
+.image-container {
+  position: relative;
+  width: 24vh;
+  height: 24vh;
+  margin: 10px;
+  cursor: pointer;
+}
+.side {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  transition: transform 0.3s ease;
+  
+}
+.text {
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2vh;
+  color: #fcfcfc;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.image-container:hover .side {
+  transform: scale(1.1);
+}
+.image-container:hover .text {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+.nav {
+  display: flex;
+  gap: 9vh;
+  list-style: none;
+  margin: 50px 80px 0 0;
+  justify-content: right;
+
+}
+.nav-link {
+  color: #838282;
+  text-decoration: none;
+  font-size: 1.8vh;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+.nav-link:hover {
+  color: black;
+}
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 90px;
+
+}
+.logo > a > img {
+  height: 10vh;
+  width: 19vh;
+}
+.cards {
+  display: flex;
+  align-items: center;
+}
+.line {
+  position: relative;
+  background-color: #f7bf2b;
+  width: 0.6vh;
+  height: 14vh;
+  margin-right: 20px;
+}
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.cards > .cardText > p,
+h1 {
+  color: #ffff;
+  padding: 0;
+  margin: 0;
+}
+.cards > .cardText > p {
+  font-size: 23px;
+  font-weight: 300;
+}
+.cards > .cardText > h1 {
+  position: relative;
+  top: 10px;
+}
+.main > img {
+  margin: 5vh;
+  width: 60vh;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: 9vh;
+
+}
+.buttons > .button1 {
+  background-color: #2f584e;
+  color: white;
+  width: 200px;
+  height: 50px;
+  border-radius: 61px;
+  border: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.buttons > .button1:hover {
+  background-color: #838282;
+}
+.buttons .button2 {
+  position: relative;
+  background-color: #ff9257;
+  height: 52px;
+  width: 52px;
+  border-radius: 100%;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.buttons .button2:hover {
+  background-color: #f79c9c;
+}
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-left: 21px solid rgb(250, 250, 250);
+  border-bottom: 11px solid transparent;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px 20px 20px 2px;
+  transform: translate(-33%, -50%);
+}
+.buttons .journy {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translatey(-290%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

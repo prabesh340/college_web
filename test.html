@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+              /* From Uiverse.io by gharsh11032000 */
+              body{
+                margin: 0;
+                padding: 0;
+              }
+      .card {
+
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: #ff9257;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        cursor:pointer;
+      }
+
+      .card svg {
+        width: 48px;
+        fill: #333;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      }
+
+      .card:hover {
+        transform: rotate(0deg) scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #fff;
+        font-family: "Poppins", serif;
+
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+      }
+
+      .card:hover .card__content {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+      }
+
+      .card__title {
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+        font-weight: 700;
+      }
+
+      .card__description {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #777;
+        line-height: 1.4;
+      }
+
+      .card:hover h1 {
+        scale: 0;
+        transform: rotate(-45deg);
+      }
+
+      h1{
+
+      color:white;
+      font-family: "Poppins", serif;
+
+      }
+      .cards{
+          display: flex;
+          height: 100vh;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+      }
+      @media(max-width:500px){
+        .cards{
+          flex-direction: column;
+          gap: 40px;
+         
+        }
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <!-- From Uiverse.io by gharsh11032000 -->
+    <div class="cards">
+      <div class="card">
+        <h1>BSc. CSIT</h1>
+        <div class="card__content">
+          <p class="card__title">Card Title</p>
+          <p class="card__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h1>BSCS</h1>
+        <div class="card__content">
+          <p class="card__title">Card Title</p>
+          <p class="card__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h1>BCA</h1>
+        <div class="card__content">
+          <p class="card__title">Card Title</p>
+          <p class="card__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.svg" type="image/icon type" />
+
+    <title>Services - ITFIX</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        color: #e0e0e0;
+        font-family: "Poppins", sans-serif;
+      }
+      .navbar {
+        position: fixed;
+        display: flex;
+        top: 0;
+        width: 100%;
+        height: 40px;
+        background-color:white;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        animation: slideDown 1s ease-in-out;
+
+      }
+
+      .nav {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav li {
+        margin: 0 15px;
+      }
+
+      .nav-link {
+        color: #838282;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: black;
+      }
+      .card {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: #80B6C2;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        cursor: pointer;
+        /* border: 1px solid #333; */
+        /* z-index: ; */
+        animation: fadeIn 1.5s ease-in-out;
+        
+      }
+
+      .card:hover {
+        transform: rotate(0deg) scale(1.1);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        background: black;
+      }
+
+      .card__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: black;
+        font-family: "Poppins", serif;
+        color: #e0e0e0;
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        overflow-x:scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+      }
+      .card__contentexample::-webkit-scrollbar {
+    display: none;
+}
+
+
+      .card:hover .card__content {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+      }
+
+      .card__title {
+        margin: 0;
+        font-size: 24px;
+        color: white;
+        font-weight: 700;
+      }
+
+      .card__description {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #b0b0b0;
+        line-height: 1.4;
+      }
+
+      .card:hover h1 {
+        scale: 0;
+        transform: rotate(-45deg);
+      }
+
+      h1 {
+        color: white;
+        font-family: "Poppins", serif;
+      }
+
+      .cards {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+
+      @media (max-width: 500px) {
+        .cards {
+          flex-direction: column;
+          gap: 40px;
+        }
+      }
+            @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+     
+
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+        <ul class="nav">
+          <li><a href="/index.html" class="nav-link">HOME</a></li>
+          <li><a href="/notice.html" class="nav-link">NOTICES</a></li>
+          <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+          <li><a href="" class="nav-link">SERVICES</a></li>
+        </ul>
+      </div>
+    <div class="cards">
+      <div class="card">
+        <h1>BSc. CSIT</h1>
+        <div class="card__content">
+          <p class="card__title">Bachelor of Science in CSIT</p>
+          <p class="card__description">
+            A comprehensive program that combines computer science and information technology to shape future tech innovators.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h1>BSCS</h1>
+        <div class="card__content">
+          <p class="card__title">Bachelor of Computer Science</p>
+          <p class="card__description">
+            Focused on core computer science principles, preparing students for advanced software development and research.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h1>BCA</h1>
+        <div class="card__content">
+          <p class="card__title">Bachelor of Computer Applications</p>
+          <p class="card__description">
+            A professional course emphasizing application development and practical tech skills for the modern industry.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h1>BIT</h1>
+        <div class="card__content">
+          <p class="card__title">Bachelor of Information Technology</p>
+          <p class="card__description">
+            Designed to empower students with the technical and managerial expertise to thrive in the IT sector.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
