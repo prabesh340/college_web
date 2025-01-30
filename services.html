@@ -189,6 +189,8 @@
       background-color: #0056b3;
     }
   </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
   <div class="navbar">
@@ -242,7 +244,8 @@
   <div class="modal" id="courseModal">
     <div class="modal-content">
       <h2 id="modalTitle">Course Title</h2>
-      <p id="modalDescription">Course description and credit hours go here.</p>
+      <canvas id="courseChart"></canvas>
+      <div class="details" id="courseDetails"></div>
       <button class="close" onclick="closeModal()">Close</button>
     </div>
   </div>
@@ -251,23 +254,75 @@
   const modal = document.getElementById("courseModal");
   const modalTitle = document.getElementById("modalTitle");
   const modalDescription = document.getElementById("modalDescription");
-  const courseDetails = {
-    "BSc. CSIT": "Comprehensive program with 120 credit hours, focusing on computer science and IT.",
-    "BSCS": "120 credit hours focused on software development and core computer science concepts.",
-    "BCA": "108 credit hours with emphasis on application development and practical skills.",
-    "BIT": "120 credit hours covering technical expertise and IT management skills."
+  const courseData = {
+    "BSc. CSIT": {
+      creditHours: 120,
+      demand:  [20, 35, 50, 70, 90],
+    },
+    "BSCS": {
+      creditHours: 120,
+      demand: [30, 50, 65, 85, 95],
+    },
+    "BCA": {
+      creditHours: 108,
+      demand: [25, 40, 60, 80, 100],
+    },
+    "BIT": {
+      creditHours: 120,
+      demand: [15, 30, 55, 75, 95],
+    },
   };
-  document.querySelectorAll(".card__content").forEach(button => {
-    button.addEventListener("click", e => {
-      e.preventDefault();
-      const course = button.getAttribute("data-course");
-      modalTitle.textContent = course;
-      modalDescription.textContent = courseDetails[course];
-      modal.style.display = "flex";
+
+    let currentChart = null;  // Global variable to store the current chart instance
+
+document.querySelectorAll(".card__content").forEach(card => {
+  card.addEventListener("click", e => {
+    e.preventDefault();
+    const course = card.getAttribute("data-course");
+    modalTitle.textContent = course;
+    modal.style.display = "flex";
+
+    // Destroy the previous chart if it exists
+    if (currentChart) {
+      currentChart.destroy();
+    }
+
+    const ctx = courseChart.getContext("2d");
+
+    // Create a new chart
+    currentChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["2019", "2020", "2021", "2022", "2023"],
+        datasets: [
+          {
+            label: "Demand Over Years",
+            data: courseData[course].demand,
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        animation: {
+          duration: 1200,
+          easing: "easeInOutQuart",
+        },
+        plugins: {
+          legend: {
+            display: true,
+          },
+        },
+      },
     });
   });
-  function closeModal() {
-    modal.style.display = "none";
-  }
+});
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
 </script>
 </html>
