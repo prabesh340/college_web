@@ -167,26 +167,39 @@
     }
     .modal-content {
       background-color: #fff;
-      padding: 20px;
+      padding: 35px;
       border-radius: 10px;
       width: 80%;
-      max-width: 500px;
+      max-width: 800px;
       color: #333;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
     .modal-content h2 {
       margin-top: 0;
     }
-    .close {
+    .close,.button {
       background-color: #007bff;
       color: #fff;
       border: none;
       padding: 7px 10px;
       border-radius: 5px;
       cursor: pointer;
+      margin-top: 14px;
+      
     }
     .close:hover {
       background-color: #0056b3;
+    }
+    .join{
+      order: -1;
+      background-color:#36a78a;
+    }
+    .join:hover{
+      background-color: #2F584E;
+    }
+    .modal_btn{
+      display: flex;
+      gap: 10px;
     }
   </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -246,7 +259,12 @@
       <h2 id="modalTitle">Course Title</h2>
       <canvas id="courseChart"></canvas>
       <div class="details" id="courseDetails"></div>
-      <button class="close" onclick="closeModal()">Close</button>
+      <div class="modal_btn">
+        <button class="button close" onclick="closeModal()">Close</button>
+      <button class="button join" onclick="closeModal()">Join now!</button>
+      </div>
+      
+
     </div>
   </div>
 </body>
